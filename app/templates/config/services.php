@@ -28,7 +28,9 @@
         <?php echo Miniflux\Helper\form_text('pinboard_token', $values, $errors) ?><br/>
 
         <?php echo Miniflux\Helper\form_label(t('Pinboard tags'), 'pinboard_tags') ?>
-        <?php echo Miniflux\Helper\form_text('pinboard_tags', $values, $errors) ?>
+        <?php echo Miniflux\Helper\form_text('pinboard_tags', $values, $errors) ?><br/>
+
+        <?php echo Miniflux\Helper\form_checkbox('pinboard_mark_unread', t('Mark bookmarks as unread'), 1, isset($values['pinboard_mark_unread']) && $values['pinboard_mark_unread'] == 1) ?>
     </div>
 
 
@@ -61,6 +63,22 @@
 
         <?php echo Miniflux\Helper\form_label(t('Wallabag password'), 'wallabag_password') ?>
         <?php echo Miniflux\Helper\form_text('wallabag_password', $values, $errors) ?><br/>
+    </div>
+
+    <h3><?php echo t('Shaarli') ?></h3>
+    <div class="options">
+        <?php echo Miniflux\Helper\form_checkbox('shaarli_enabled', t('Send bookmarks to Shaarli'), 1, isset($values['shaarli_enabled']) && $values['shaarli_enabled'] == 1) ?><br />
+
+        <?php echo Miniflux\Helper\form_label(t('Shaarli URL'), 'shaarli_url') ?>
+        <?php echo Miniflux\Helper\form_text('shaarli_url', $values, $errors) ?><br/>
+
+        <?php echo Miniflux\Helper\form_label(t('Shaarli secret'), 'shaarli_secret') ?>
+        <?php echo Miniflux\Helper\form_text('shaarli_secret', $values, $errors) ?><br/>
+
+        <?php echo Miniflux\Helper\form_label(t('Shaarli tags'), 'shaarli_tags') ?>
+        <?php echo Miniflux\Helper\form_text('shaarli_tags', $values, $errors) ?><br/>
+
+        <?php echo Miniflux\Helper\form_checkbox('shaarli_private', t('Private Bookmarks'), 1, isset($values['shaarli_private']) && $values['shaarli_private'] == 1) ?><br />
     </div>
 
     <div class="form-actions">
